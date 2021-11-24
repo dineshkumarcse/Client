@@ -23,7 +23,7 @@ namespace Client
         {
             if (inputrequest.Equals("Get", StringComparison.OrdinalIgnoreCase))
             {
-                hubConnection.InvokeCoreAsync("Get", args: new[] { "Request" });
+                hubConnection.InvokeCoreAsync("Get", args: new[] { "Request : " });
                 hubConnection.On("Get", (string username) =>
                 {
                     Console.Write(username);
@@ -32,7 +32,7 @@ namespace Client
             }
             else if (inputrequest.Equals("Start", StringComparison.OrdinalIgnoreCase))
             {
-                hubConnection.InvokeCoreAsync("Start", args: new[] { "Request" });
+                hubConnection.InvokeCoreAsync("Start", args: new[] { "Request : " });
                 hubConnection.On("Start", (string username) =>
                 {
                     Console.Write(username);
@@ -41,7 +41,7 @@ namespace Client
             }
             else if (inputrequest.Equals("Stop", StringComparison.OrdinalIgnoreCase))
             {
-                hubConnection.InvokeCoreAsync("Stop", args: new[] { "Request" });
+                hubConnection.InvokeCoreAsync("Stop", args: new[] { "Request : " });
                 hubConnection.On("Stop", (string username) =>
                 {
                     Console.Write(username);
